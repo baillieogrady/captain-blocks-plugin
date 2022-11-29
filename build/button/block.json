@@ -3,7 +3,7 @@
   "apiVersion": 2,
   "name": "captain/button",
   "version": "0.1.0",
-  "title": "button",
+  "title": "Button",
   "category": "widgets",
   "description": "Example block scaffolded with Create Block tool.",
   "supports": {
@@ -14,24 +14,21 @@
   "editorStyle": "file:./index.css",
   "style": "file:./style-index.css",
   "attributes": {
+    "placeholder": {
+      "type": "string"
+    },
+    "text": {
+      "type": "string",
+      "source": "text",
+      "selector": "a"
+    },
     "url": {
       "type": "string",
       "source": "attribute",
       "selector": "a",
       "attribute": "href"
     },
-    "title": {
-      "type": "string",
-      "source": "attribute",
-      "selector": "a",
-      "attribute": "title"
-    },
-    "text": {
-      "type": "string",
-      "source": "html",
-      "selector": "a"
-    },
-    "linkTarget": {
+    "target": {
       "type": "string",
       "source": "attribute",
       "selector": "a",
@@ -42,9 +39,6 @@
       "source": "attribute",
       "selector": "a",
       "attribute": "rel"
-    },
-    "placeholder": {
-      "type": "string"
     }
   }
 }
