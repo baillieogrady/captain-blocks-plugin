@@ -1,0 +1,44 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "captain/button",
+	"version": "0.1.0",
+	"title": "Button",
+	"category": "widgets",
+	"description": "Example block scaffolded with Create Block tool.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "button",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"placeholder": {
+			"type": "string"
+		},
+		"text": {
+			"type": "string",
+			"source": "text",
+			"selector": "a"
+		},
+		"url": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "href"
+		},
+		"target": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "target"
+		},
+		"rel": {
+			"type": "string",
+			"source": "attribute",
+			"selector": "a",
+			"attribute": "rel"
+		}
+	}
+}
