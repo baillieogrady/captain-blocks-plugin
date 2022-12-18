@@ -1,0 +1,37 @@
+{
+  "$schema": "https://schemas.wp.org/trunk/block.json",
+  "apiVersion": 2,
+  "name": "captain/sticky-heading",
+  "version": "0.1.0",
+  "title": "Sticky Heading",
+  "category": "captain",
+  "description": "Heading that sticks to the top of the screen when you scroll to it.",
+  "supports": {
+    "html": false,
+    "__experimentalSelector": "h1,h2,h3,h4,h5,h6"
+  },
+  "textdomain": "sticky-heading",
+  "editorScript": "file:./index.js",
+  "editorStyle": "file:./index.css",
+  "style": "file:./style-index.css",
+  "attributes": {
+    "textAlign": {
+      "type": "string"
+    },
+    "content": {
+      "type": "string",
+      "source": "html",
+      "selector": "h1,h2,h3,h4,h5,h6",
+      "default": "",
+      "__experimentalRole": "content"
+    },
+    "level": {
+      "type": "number",
+      "default": 2
+    },
+    "border": {
+      "type": "string",
+      "default": "border-t border-black"
+    }
+  }
+}

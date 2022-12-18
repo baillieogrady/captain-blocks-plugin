@@ -21,9 +21,14 @@
  * @see https://developer.wordpress.org/reference/functions/register_block_type/
  */
 function create_block_captain_blocks_block_init() {
+	// layout
 	register_block_type( __DIR__ . '/build/container' );
 	register_block_type( __DIR__ . '/build/grid' );
 	register_block_type( __DIR__ . '/build/grid-item' );
+
+	// content
 	register_block_type( __DIR__ . '/build/button' );
+	register_block_type( __DIR__ . '/build/sticky-heading' );
+
 }
 add_action( 'init', 'create_block_captain_blocks_block_init' );
