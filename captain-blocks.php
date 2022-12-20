@@ -30,7 +30,6 @@ function create_block_captain_blocks_block_init() {
 	register_block_type( __DIR__ . '/build/button' );
 	register_block_type( __DIR__ . '/build/sticky-heading' );
 	register_block_type( __DIR__ . '/build/card' );
-
-
+	register_block_type( __DIR__ . '/build/lead' );
 }
 add_action( 'init', 'create_block_captain_blocks_block_init' );

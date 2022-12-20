@@ -1,0 +1,23 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "captain/lead",
+	"version": "0.1.0",
+	"title": "Lead",
+	"category": "widgets",
+	"description": "Example block scaffolded with Create Block tool.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "lead",
+	"editorScript": "file:./index.js",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		}
+	}
+}
