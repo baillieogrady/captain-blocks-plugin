@@ -46,11 +46,6 @@ export default function Edit({ setAttributes, attributes, isSelected }) {
 	const opensInNewTab = target === '_blank';
 	const NEW_TAB_REL = 'noreferrer noopener';
 
-
-	const blockProps = useBlockProps({
-		className: 'btn',
-	});
-
 	function setButtonText(newText) {
 		// Remove anchor tags from button text content.
 		setAttributes({ text: newText.replace(/<\/?a[^>]*>/g, '') });
@@ -134,14 +129,16 @@ export default function Edit({ setAttributes, attributes, isSelected }) {
 					/>
 				</Popover>
 			)}
-			<RichText
-				{...blockProps}
-				value={text}
-				tagName='div'
-				placeholder={__('Add text...')}
-				allowedFormats={[]}
-				onChange={(value) => setButtonText(value)}
-			/>
+			<div {...useBlockProps()}>
+				<RichText
+					value={text}
+					tagName="div"
+					placeholder={__("Add text...")}
+					allowedFormats={[]}
+					onChange={(value) => setButtonText(value)}
+					className="border-2 border-black text-black lg:hover:border-blue lg:hover:text-blue hover:no-underline rounded-full inline-block py-2 px-4 lg:px-6 lg:text-xl"
+				/>
+			</div>
 		</>
 		
 	);
