@@ -4,27 +4,22 @@
 	"name": "captain/grid-item",
 	"version": "0.1.0",
 	"title": "Grid item",
-	"category": "widgets",
+	"category": "captain",
 	"parent": ["captain/grid"],
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "A single item within a grid block.",
 	"supports": {
 		"html": false
 	},
 	"textdomain": "grid-item",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
 	"attributes": {
-		"message": {
-			"type": "string",
-			"source": "text",
-			"selector": "div",
-			"default": ""
+		"columnStart": {
+			"type": "number",
+			"source": "text"
 		},
-		"align": {
-			"type": "string",
-			"source": "text",
-			"default": ""
+		"columnEnd": {
+			"type": "number",
+			"source": "text"
 		}
 	}
 }

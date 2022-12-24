@@ -15,10 +15,10 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save({ attributes }) {
+export default function save({ attributes: { columnStart, columnEnd } }) {
 	return (
 		<div {...useBlockProps.save({
-			className: `col-span-4 lg:col-span-7 ${attributes.align}`
+			className: `col-start-1 col-end-13 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
 		})}>
 			<InnerBlocks.Content />
 		</div>

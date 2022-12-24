@@ -13,20 +13,7 @@ import { __ } from '@wordpress/i18n';
  */
 import { useBlockProps, InnerBlocks, InspectorControls } from '@wordpress/block-editor';
 
-import { PanelBody, SelectControl } from '@wordpress/components';
-
-const TEMPLATE = [
-	['core/paragraph', { value: 'Enter side content...' }],
-];
-
-
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.scss';
+import { PanelBody, RangeControl } from '@wordpress/components';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -37,35 +24,38 @@ import './editor.scss';
  * @return {WPElement} Element to render.
  */
 
-export default function Edit({ setAttributes, attributes }) {
-	
-	const blockProps = useBlockProps({
-		className: `col-span-4 lg:col-span-7 ${attributes.align}`,
-	});
-
-	const onChangeAlign = (newAlignment) => {
-		setAttributes({ align: newAlignment === undefined ? '' : newAlignment })
-	}
-	
+export default function Edit({ attributes: { columnStart, columnEnd }, setAttributes }) {	
 	return (
-		<div { ...blockProps }>
+		<>
 			<InspectorControls>
 				<PanelBody
 					title={__('Alignment')}
 				>
-					<SelectControl
-						label="Column"
-						value={ attributes.align }
-						options={ [
-							{ label: 'Left', value: '' },
-							{ label: 'Right', value: 'lg:col-start-6' },
-						] }
-						onChange={ ( newAlignment ) => onChangeAlign( newAlignment ) }
-						// __nextHasNoMarginBottom
+					<RangeControl
+						label={__('Column start', 'captain')}
+						value={columnStart}
+						onChange={(columnStart) => setAttributes({ columnStart })}
+						min={1}
+						max={12}
+						initialPosition={1}
+						allowReset={true}
+					/>
+					<RangeControl
+						label={__('Column end', 'captain')}
+						value={columnEnd}
+						onChange={(columnEnd) => setAttributes({ columnEnd })}
+						min={1}
+						max={12}
+						initialPosition={12}
+						allowReset={true}
 					/>
 				</PanelBody>
 			</InspectorControls>
-			<InnerBlocks template={TEMPLATE} />
-		</div>
+			<div {...useBlockProps({
+				className: `lg:col-start-${columnStart} lg:col-end-${columnEnd}`
+			})}>
+				<InnerBlocks />
+			</div>
+		</>
 	);
 }
