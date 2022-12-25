@@ -18,7 +18,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 export default function save({ attributes: { columnStart, columnEnd } }) {
 	return (
 		<div {...useBlockProps.save({
-			className: `col-start-1 col-end-13 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
+			className: `col-start-1 col-end-12 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
 		})}>
 			<InnerBlocks.Content />
 		</div>

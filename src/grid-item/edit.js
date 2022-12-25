@@ -34,25 +34,23 @@ export default function Edit({ attributes: { columnStart, columnEnd }, setAttrib
 					<RangeControl
 						label={__('Column start', 'captain')}
 						value={columnStart}
-						onChange={(columnStart) => setAttributes({ columnStart })}
+						onChange={(columnStart) => setAttributes({ columnStart: columnStart })}
 						min={1}
-						max={12}
+						max={13}
 						initialPosition={1}
-						allowReset={true}
-					/>
+						/>
 					<RangeControl
 						label={__('Column end', 'captain')}
 						value={columnEnd}
-						onChange={(columnEnd) => setAttributes({ columnEnd })}
+						onChange={(columnEnd) => setAttributes({ columnEnd: columnEnd })}
 						min={1}
-						max={12}
-						initialPosition={12}
-						allowReset={true}
+						max={13}
+						initialPosition={13}
 					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps({
-				className: `lg:col-start-${columnStart} lg:col-end-${columnEnd}`
+				className: `col-start-1 col-end-12 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
 			})}>
 				<InnerBlocks />
 			</div>

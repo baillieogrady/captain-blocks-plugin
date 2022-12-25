@@ -18,7 +18,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 export default function save() {
 	return (
 		<div {...useBlockProps.save()}>
-			<div className="grid grid-cols-12">
+			<div className="grid grid-cols-12 gap-x-5">
 				<InnerBlocks.Content />
 			</div>
 		</div>
