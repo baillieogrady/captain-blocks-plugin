@@ -5,7 +5,7 @@
 	"version": "0.1.0",
 	"title": "Grid",
 	"category": "captain",
-	"description": "A responsive grid container.",
+	"description": "Add a grid to create a multi column layout.",
 	"supports": {
 		"html": false
 	},

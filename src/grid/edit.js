@@ -11,7 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, useInnerBlocksProps, } from '@wordpress/block-editor';
+import { useBlockProps, useInnerBlocksProps, InnerBlocks } from '@wordpress/block-editor';
 
 const TEMPLATE = [
 	['captain/grid-item', {}],
@@ -30,12 +30,13 @@ export default function Edit() {
 	const blockProps = useBlockProps({});
 
 	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		template: TEMPLATE
+		template: TEMPLATE,
+		allowedBlocks: ['captain/grid-item'],
 	});
 
 	return (
 		<div { ...blockProps}>
-			<div className="grid grid-cols-12">
+			<div className="grid grid-cols-12 gap-x-5">
 				{innerBlocksProps.children}
 			</div>
 		</div>
