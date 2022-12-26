@@ -22,7 +22,6 @@
  */
 function create_block_captain_blocks_block_init() {
 	// layout
-	register_block_type( __DIR__ . '/build/container' );
 	register_block_type( __DIR__ . '/build/grid' );
 	register_block_type( __DIR__ . '/build/grid-item' );
 
