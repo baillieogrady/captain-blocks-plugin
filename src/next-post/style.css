@@ -1,0 +1,19 @@
+.wp-block-captain-next-post__link {
+    display: none;
+}
+
+@media(min-width: 1440px) {
+    .wp-block-captain-next-post__link {
+        display: block;
+    }
+
+    .wp-block-captain-next-post__link a {
+        cursor: url('./cursor.svg'), auto;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}

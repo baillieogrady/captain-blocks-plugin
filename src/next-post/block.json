@@ -1,0 +1,30 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "captain/next-post",
+	"version": "0.1.0",
+	"title": "Next Post",
+	"category": "captain",
+	"icon": "",
+	"description": "Displays the post link and title that follows the current post. If not found, it displays the first post.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "next-post",
+	"editorScript": "file:./index.js",
+	"render": "file:./render.php",
+	"editorStyle": "file:./index.css",
+	"style": "file:./style-index.css",
+	"attributes": {
+		"label": {
+			"type": "string",
+			"selector": "p",
+			"default": "NEXT POST",
+			"placeholder": "Label"
+		},
+		"cursor": {
+			"type": "boolean",
+			"default": false
+		}
+	}
+}
