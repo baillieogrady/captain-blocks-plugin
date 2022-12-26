@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "captain/lead",
+	"version": "0.1.0",
+	"title": "Lead",
+	"category": "captain",
+	"description": "Add a lead paragraph.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "lead",
+	"editorScript": "file:./index.js",
+	"attributes": {
+		"text": {
+			"type": "string",
+			"source": "html",
+			"selector": "p"
+		}
+	}
+}

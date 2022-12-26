@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,12 +15,10 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save({ attributes: { columnStart, columnEnd } }) {
+export default function save({attributes : { height }}) {
 	return (
 		<div {...useBlockProps.save({
-			className: `col-start-1 col-end-12 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
-		})}>
-			<InnerBlocks.Content />
-		</div>
+			className: height,
+		})}></div>
 	);
 }

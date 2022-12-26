@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -15,12 +15,19 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
-export default function save({ attributes: { columnStart, columnEnd } }) {
+export default function save({ attributes }) {
+	const { text, url, target, rel } = attributes;
+
 	return (
-		<div {...useBlockProps.save({
-			className: `col-start-1 col-end-12 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
-		})}>
-			<InnerBlocks.Content />
+		<div {...useBlockProps.save()}>
+			<RichText.Content
+				tagName="a"
+				className="border-2 border-black text-black lg:hover:border-blue lg:hover:text-blue hover:no-underline rounded-full inline-block py-2 px-4 lg:px-6 lg:text-xl"
+				value={text}
+				href={url}	
+				target={target}
+				rel={rel}
+			/>
 		</div>
 	);
 }

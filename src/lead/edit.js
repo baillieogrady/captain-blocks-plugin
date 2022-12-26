@@ -11,11 +11,7 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, useInnerBlocksProps, InnerBlocks } from '@wordpress/block-editor';
-
-const TEMPLATE = [
-	['captain/grid-item', {}],
-];
+import { useBlockProps, RichText } from '@wordpress/block-editor';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -25,20 +21,16 @@ const TEMPLATE = [
  *
  * @return {WPElement} Element to render.
  */
-
-export default function Edit() {
-	const blockProps = useBlockProps({});
-
-	const innerBlocksProps = useInnerBlocksProps(blockProps, {
-		template: TEMPLATE,
-		allowedBlocks: ['captain/grid-item'],
-	});
-
+export default function Edit({ attributes: { text }, setAttributes }) {
 	return (
-		<div { ...blockProps}>
-			<div className="grid grid-cols-12 gap-x-5">
-				{innerBlocksProps.children}
-			</div>
+		<div {...useBlockProps()}>
+			<RichText
+				value={text}
+				tagName="p"
+				placeholder={"Add text..."}
+				onChange={(value) => setAttributes({ text: value })}
+				className="lg:text-2xl"
+			/>
 		</div>
 	);
 }

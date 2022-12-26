@@ -18,6 +18,8 @@
 		"@wordpress/scripts": "^24.6.0"
 	},
 	"dependencies": {
-		"@wordpress/icons": "^9.13.0"
+		"@wordpress/icons": "^9.13.0",
+		"@wordpress/keycodes": "^3.23.0",
+		"classnames": "^2.3.2"
 	}
 }
