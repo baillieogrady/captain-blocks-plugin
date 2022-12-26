@@ -1,0 +1,21 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "captain/spacer",
+	"version": "0.1.0",
+	"title": "Spacer",
+	"category": "captain",
+	"icon": "",
+	"description": "Add white space between your blocks.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "spacer",
+	"editorScript": "file:./index.js",
+	"attributes": {
+		"height": {
+			"type": "string",
+			"default": ""
+		}
+	}
+}
