@@ -44,6 +44,7 @@ export default function Edit({ attributes: { label, cursor }, setAttributes }) {
 			<RichText
 				tagName="p"
 				className="text-xs lg:text-sm mb-2"
+				placeholder={"Add text..."}
 				value={label}
 				onChange={(label) => setAttributes({ label })}
 			/>

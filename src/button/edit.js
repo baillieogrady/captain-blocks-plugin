@@ -19,13 +19,6 @@ import { useState, useEffect } from '@wordpress/element';
 
 import { Icon, link, linkOff } from '@wordpress/icons';
 
-/**
- * Lets webpack process CSS, SASS or SCSS files referenced in JavaScript files.
- * Those files can contain any CSS code that gets applied to the editor.
- *
- * @see https://www.npmjs.com/package/@wordpress/scripts#using-css
- */
-import './editor.css';
 
 /**
  * The edit function describes the structure of your block in the context of the
@@ -47,7 +40,6 @@ export default function Edit({ setAttributes, attributes, isSelected }) {
 	const NEW_TAB_REL = 'noreferrer noopener';
 
 	function setButtonText(newText) {
-		// Remove anchor tags from button text content.
 		setAttributes({ text: newText.replace(/<\/?a[^>]*>/g, '') });
 	}
 
@@ -59,7 +51,6 @@ export default function Edit({ setAttributes, attributes, isSelected }) {
 	function onToggleOpenInNewTab(value) {
 		const newLinkTarget = value ? '_blank' : undefined;
 		
-		// Learn
 		let updatedRel = rel;
 		if (newLinkTarget && !rel) {
 			updatedRel = NEW_TAB_REL;
@@ -115,7 +106,6 @@ export default function Edit({ setAttributes, attributes, isSelected }) {
 				<Popover>
 					<LinkControl
 						value={{ url, opensInNewTab }}
-						// Learn
 						onChange={({
 							url: newURL = '',
 							opensInNewTab: newOpensInNewTab,

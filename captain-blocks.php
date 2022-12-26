@@ -13,24 +13,32 @@
  * @package           create-block
  */
 
-/**
- * Registers the block using the metadata loaded from the `block.json` file.
- * Behind the scenes, it registers also all assets so they can be enqueued
- * through the block editor in the corresponding context.
- *
- * @see https://developer.wordpress.org/reference/functions/register_block_type/
- */
-function create_block_captain_blocks_block_init() {
+/*
+* Init
+*/
+add_action('init', function () {
+	/*
+	* Register captain block pattern category
+	*/
+	register_block_pattern_category('captain', array( 'label' => __( 'Captain', 'captain-blocks' )));
+
+	/**
+	 * Registers the block using the metadata loaded from the `block.json` file.
+	 * Behind the scenes, it registers also all assets so they can be enqueued
+	 * through the block editor in the corresponding context.
+	 *
+	 * @see https://developer.wordpress.org/reference/functions/register_block_type/
+	 */
+
 	// layout
 	register_block_type( __DIR__ . '/build/grid' );
 	register_block_type( __DIR__ . '/build/grid-item' );
-
+	
 	// content
 	register_block_type( __DIR__ . '/build/button' );
-	register_block_type( __DIR__ . '/build/sticky-heading' );
 	register_block_type( __DIR__ . '/build/card' );
 	register_block_type( __DIR__ . '/build/lead' );
 	register_block_type( __DIR__ . '/build/next-post' );
 	register_block_type( __DIR__ . '/build/spacer' );
-}
-add_action( 'init', 'create_block_captain_blocks_block_init' );
+	register_block_type( __DIR__ . '/build/sticky-heading' );
+});

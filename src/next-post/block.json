@@ -19,8 +19,7 @@
 		"label": {
 			"type": "string",
 			"selector": "p",
-			"default": "NEXT POST",
-			"placeholder": "Label"
+			"default": "NEXT POST"
 		},
 		"cursor": {
 			"type": "boolean",
