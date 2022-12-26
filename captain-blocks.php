@@ -27,10 +27,11 @@ function create_block_captain_blocks_block_init() {
 
 	// content
 	register_block_type( __DIR__ . '/build/button' );
-	register_block_type( __DIR__ . '/build/sticky-heading' );
 	register_block_type( __DIR__ . '/build/card' );
 	register_block_type( __DIR__ . '/build/lead' );
 	register_block_type( __DIR__ . '/build/next-post' );
 	register_block_type( __DIR__ . '/build/spacer' );
+	register_block_type( __DIR__ . '/build/sticky-heading' );
 }
+
 add_action( 'init', 'create_block_captain_blocks_block_init' );

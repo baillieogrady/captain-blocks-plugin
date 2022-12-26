@@ -5,14 +5,12 @@
 	"version": "0.1.0",
 	"title": "Card",
 	"category": "captain",
-	"description": "Example block scaffolded with Create Block tool.",
+	"description": "Add a card with an image and caption.",
 	"supports": {
 		"html": false
 	},
 	"textdomain": "card",
 	"editorScript": "file:./index.js",
-	"editorStyle": "file:./index.css",
-	"style": "file:./style-index.css",
 	"attributes": {
 		"url": {
 			"type": "string",

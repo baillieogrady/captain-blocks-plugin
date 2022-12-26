@@ -4,8 +4,8 @@
 	"name": "captain/button",
 	"version": "0.1.0",
 	"title": "Button",
-	"category": "widgets",
-	"description": "Example block scaffolded with Create Block tool.",
+	"category": "captain",
+	"description": "Add a button styled link.",
 	"supports": {
 		"html": false
 	},
