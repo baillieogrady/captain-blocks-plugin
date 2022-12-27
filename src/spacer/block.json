@@ -15,7 +15,7 @@
 	"attributes": {
 		"height": {
 			"type": "string",
-			"default": ""
+			"default": "h-22 lg:h-36"
 		}
 	}
 }

@@ -38,11 +38,6 @@ add_action('init', function () {
 	register_block_type( __DIR__ . '/build/sticky-heading' );
 
 	/*
-	* Register captain block pattern category
-	*/
-	register_block_pattern_category('captain', array( 'label' => __( 'Captain', 'captain-blocks' )));
-
-	/*
 	* Add captain block category.
 	*/
 	add_filter( 'block_categories_all' , function( $categories ) {
