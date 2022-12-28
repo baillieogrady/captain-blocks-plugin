@@ -8,7 +8,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
- * be combined into the final markup, which is then se	rialized by the block
+ * be combined into the final markup, which is then serialized by the block
  * editor into `post_content`.
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/block-api/block-edit-save/#save
@@ -17,8 +17,8 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  */
 export default function save() {
 	return (
-		<div {...useBlockProps({
-			className: 'px-5 lg:px-8',
+		<div {...useBlockProps.save({
+			className: "px-5 lg:px-8",
 		})}>
 			<InnerBlocks.Content />
 		</div>

@@ -12,7 +12,6 @@ import { __ } from '@wordpress/i18n';
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
 import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
-
 /**
  * The edit function describes the structure of your block in the context of the
  * editor. This represents what the editor will render when the block is used.
@@ -21,10 +20,11 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
  *
  * @return {WPElement} Element to render.
  */
+
 export default function Edit() {
 	return (
 		<div {...useBlockProps({
-			className: 'px-5 lg:px-8',
+			className: "px-5 lg:px-8",
 		})}>
 			<InnerBlocks />
 		</div>

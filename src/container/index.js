@@ -5,6 +5,7 @@
  */
 import { registerBlockType } from '@wordpress/blocks';
 
+
 /**
  * Internal dependencies
  */

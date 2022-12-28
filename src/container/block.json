@@ -5,6 +5,7 @@
 	"version": "0.1.0",
 	"title": "Container",
 	"category": "captain",
+	"icon": "",
 	"description": "Add a container around your content with horizontal padding.",
 	"supports": {
 		"html": false
