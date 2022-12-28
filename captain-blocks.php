@@ -28,6 +28,7 @@ add_action('init', function () {
 	// layout
 	register_block_type( __DIR__ . '/build/grid' );
 	register_block_type( __DIR__ . '/build/grid-item' );
+	register_block_type( __DIR__ . '/build/container' );
 	
 	// content
 	register_block_type( __DIR__ . '/build/button' );
