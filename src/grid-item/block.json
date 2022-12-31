@@ -14,10 +14,12 @@
 	"editorScript": "file:./index.js",
 	"attributes": {
 		"columnStart": {
-			"type": "number"
+			"type": "number",
+			"default": 1
 		},
 		"columnEnd": {
-			"type": "number"
+			"type": "number",
+			"default": 13
 		}
 	}
 }

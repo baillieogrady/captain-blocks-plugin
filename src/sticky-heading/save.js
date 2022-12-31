@@ -21,7 +21,7 @@ export default function save({ attributes : {content, level, border, button } })
 
 	return (
 		<div {...useBlockProps.save({
-			className: `${border} flex justify-between items-center px-5 lg:px-8 sticky top-0 z-10 bg-grey py-4 lg:py-6`
+			className: `${border ? "border-t border-black":""} flex justify-between items-center px-5 lg:px-8 sticky top-0 z-10 bg-grey py-4 lg:py-6`
 		})}>
 			<TagName>
 				<RichText.Content value={content} />

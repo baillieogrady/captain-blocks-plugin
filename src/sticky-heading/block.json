@@ -27,7 +27,7 @@
 		},
 		"border": {
 			"type": "boolean",
-			"default": false
+			"default": true
 		},
 		"button": {
 			"type": "boolean",
