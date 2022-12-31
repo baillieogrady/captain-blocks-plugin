@@ -11,11 +11,11 @@ import { __ } from '@wordpress/i18n';
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { useBlockProps, BlockControls, RichText, InspectorControls } from '@wordpress/block-editor';
+import { useBlockProps, InnerBlocks, BlockControls, RichText, InspectorControls } from '@wordpress/block-editor';
 
 import HeadingLevelDropdown from './heading-level-dropdown';
 
-import { PanelBody, SelectControl } from '@wordpress/components';
+import { PanelBody, SelectControl, ToggleControl} from '@wordpress/components';
 
 
 /**
@@ -34,12 +34,18 @@ import './editor.css';
  *
  * @return {WPElement} Element to render.
  */
-export default function Edit({ attributes: { level, content, border }, setAttributes }) {
-	const tagName = 'h' + level;
 
-	function onChangeSelect(newValue) {
-		setAttributes({ border: newValue });
-	}
+const ALLOWED_BLOCKS = [
+	'captain/button',
+]
+
+const TEMPLATE = [
+	['captain/button', { placeholder: 'Add text...' }],
+]
+
+
+export default function Edit({ attributes: { level, content, border, button }, setAttributes }) {
+	const tagName = 'h' + level;
 
 	return (
 		<>
@@ -53,29 +59,39 @@ export default function Edit({ attributes: { level, content, border }, setAttrib
 			</BlockControls>
 			<InspectorControls key="settings">
 				<PanelBody title={__('Settings')}>
-					<SelectControl
-						label={__('Top border')}
-						value={border}
-						options={[
-							{ label: 'Yes', value: "border-t border-black" },
-							{ label: 'No', value: "" },
-						]}
-						onChange={onChangeSelect}
+					<ToggleControl
+						label="Display a top border"
+						help="Adds a top border to the block."
+						checked={border}
+						onChange={(border) => setAttributes({ border })}
+					/>
+					<ToggleControl
+						label="Display a button"
+						help="Enables a button to be displayed on the right side of the heading."
+						checked={button}
+						onChange={(button) => setAttributes({ button })}
 					/>
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps({
-				className: border,
+				className: `${border ? 'border-t border-black' : '' } flex justify-between items-center px-5 lg:px-8 py-4 lg:py-6`,
 			})}>
 				<RichText
 					identifier="content"
 					tagName={tagName}
 					value={content}
 					onChange={(value) => setAttributes({ content: value })}
-					placeholder={'Sticky Heading'}
+					placeholder={'Add text...'}
 					allowedFormats={[]}
-					className={`px-5 lg:px-8 sticky top-0 z-10 bg-grey py-4 lg:py-6`}
+					className={`sticky top-0 z-10 bg-grey`}
 				/>
+				{button && (
+					<InnerBlocks
+						allowedBlocks={ALLOWED_BLOCKS}
+						template={TEMPLATE}
+						renderAppender={false}
+					/>
+				)}
 			</div>
 		</>
 	);

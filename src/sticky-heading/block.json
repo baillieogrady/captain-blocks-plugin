@@ -14,9 +14,6 @@
 	"editorScript": "file:./index.js",
 	"editorStyle": "file:./index.css",
 	"attributes": {
-		"textAlign": {
-			"type": "string"
-		},
 		"content": {
 			"type": "string",
 			"source": "html",
@@ -29,8 +26,12 @@
 			"default": 2
 		},
 		"border": {
-			"type": "string",
-			"default": "border-t border-black"
+			"type": "boolean",
+			"default": false
+		},
+		"button": {
+			"type": "boolean",
+			"default": false
 		}
 	}
 }

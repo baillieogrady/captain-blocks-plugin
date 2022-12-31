@@ -20,14 +20,16 @@ export default function save({ attributes }) {
 
 	return (
 		<div {...useBlockProps.save()}>
-			<RichText.Content
-				tagName="a"
-				className="border-2 border-black text-black lg:hover:border-blue lg:hover:text-blue hover:no-underline rounded-full inline-block py-2 px-4 lg:px-6 lg:text-xl"
-				value={text}
-				href={url}	
-				target={target}
-				rel={rel}
-			/>
+			{text && (
+				<RichText.Content
+					tagName="a"
+					className="border-2 border-black text-black lg:hover:border-blue lg:hover:text-blue hover:no-underline rounded-full inline-block py-2 px-4 lg:px-6 lg:text-xl"
+					value={text}
+					href={url}
+					target={target}
+					rel={rel}
+				/>
+			)}
 		</div>
 	);
 }
