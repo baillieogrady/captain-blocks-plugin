@@ -19,7 +19,7 @@
 		},
 		"columnEnd": {
 			"type": "number",
-			"default": 13
+			"default": 8
 		}
 	}
 }
