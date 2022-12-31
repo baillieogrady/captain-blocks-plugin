@@ -1,9 +1,35 @@
 <?php
-	if($attributes["cursor"]){
-		$link = get_next_post_link( '%link', '' );
+	$link = get_next_post_link( '%link', '' );
+
+	if($link) {
+		$heading = get_next_post_link( '%link', '%title' );
+	} else {
+		// if no next post, link to the oldest post
+		$args = array(
+			'offset'           => 0,
+			'category'         => '',
+			'category_name'    => '',
+			'orderby'          => 'DESC',
+			'order'            => 'ASC',
+			'include'          => '',
+			'exclude'          => '',
+			'meta_key'         => '',
+			'meta_value'       => '',
+			'post_type'        => 'post',
+			'post_mime_type'   => '',
+			'post_parent'      => '',
+			'post_status'      => 'publish',
+			'suppress_filters' => true 
+		);
+
+		$latest = get_posts($args);
+
+		$title = get_the_title($latest[0]->ID);
+		$permalink = get_permalink($latest[0]->ID);
+
+		$heading = '<a href="' . $permalink . '" rel="next">' . $title . '</a>';
+		$link = '<a href="' . $link  . '" rel="next"></a>';
 	}
-	
-	$heading = get_next_post_link( '%link', '%title' );
 ?>
 
 <div <?= get_block_wrapper_attributes()?>>
