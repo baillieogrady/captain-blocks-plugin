@@ -4,7 +4,7 @@
  *
  * @see https://developer.wordpress.org/block-editor/reference-guides/packages/packages-block-editor/#useblockprops
  */
-import { RichText, useBlockProps } from '@wordpress/block-editor';
+import { RichText, useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 
 /**
  * The save function defines the way in which the different attributes should
@@ -16,14 +16,19 @@ import { RichText, useBlockProps } from '@wordpress/block-editor';
  * @return {WPElement} Element to render.
  */
 
-export default function save({ attributes : {content, level, border } }) {
+export default function save({ attributes : {content, level, border, button } }) {
 	const TagName = 'h' + level;
 
 	return (
-		<TagName {...useBlockProps.save({
-			className: `${border} flex justify-between items-center px-5 lg:px-8 sticky top-0 z-10 bg-grey py-4 lg:py-6`,
+		<div {...useBlockProps.save({
+			className: `${border ? "border-t border-black":""} flex justify-between items-center px-5 lg:px-8 sticky top-0 z-10 bg-grey py-4 lg:py-6`
 		})}>
-			<RichText.Content value={content} />
-		</TagName>
+			<TagName>
+				<RichText.Content value={content} />
+			</TagName>
+			{button && (
+				<InnerBlocks.Content />
+			)}
+		</div>
 	);
 }

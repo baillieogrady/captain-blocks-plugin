@@ -1,0 +1,15 @@
+{
+	"$schema": "https://schemas.wp.org/trunk/block.json",
+	"apiVersion": 2,
+	"name": "captain/container",
+	"version": "0.1.0",
+	"title": "Container",
+	"category": "captain",
+	"icon": "",
+	"description": "Add a container around your content with horizontal padding.",
+	"supports": {
+		"html": false
+	},
+	"textdomain": "container",
+	"editorScript": "file:./index.js"
+}

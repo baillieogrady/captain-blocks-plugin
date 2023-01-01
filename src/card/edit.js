@@ -50,12 +50,11 @@ export default function Edit({ attributes: { url }, setAttributes }) {
 			</BlockControls>
 			<div {...useBlockProps()}>
 				<figure>
-					<img src={url || placeholder} alt="" className={url.length != 0 ? 'border-2 border-black mb-4' : ''} />
+					<img src={url || placeholder} alt="" className={url.length != 0 ? 'mb-2 lg:mb-4' : ''} />
 					<figcaption className='lg:w-7/12'>
 						<InnerBlocks
 							template={TEMPLATE}
 							allowedBlocks={ALLOWED_BLOCKS}
-							renderAppender={InnerBlocks.ButtonBlockAppender}
 						/>
 					</figcaption>
 				</figure>
