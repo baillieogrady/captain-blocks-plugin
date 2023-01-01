@@ -74,7 +74,7 @@ export default function Edit({ attributes: { level, content, border, button }, s
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps({
-				className: `${border ? 'border-t border-black' : '' } flex justify-between items-center px-5 lg:px-8 py-4 lg:py-6`,
+				className: `${border ? 'border-t border-black' : '' } flex justify-between items-center px-5 lg:px-8 py-4 lg:py-6 alignfull`,
 			})}>
 				<RichText
 					identifier="content"

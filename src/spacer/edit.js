@@ -47,7 +47,7 @@ export default function Edit({ attributes: { height }, setAttributes }) {
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps({
-				className: `border-dashed border-y-[1px] border-black ${ height }`,
+				className: `border-dashed border-y-[1px] border-black ${height} alignfull`
 			}) }></div>
 		</>
 		

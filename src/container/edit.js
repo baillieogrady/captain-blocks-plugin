@@ -24,7 +24,7 @@ import { useBlockProps, InnerBlocks } from '@wordpress/block-editor';
 export default function Edit() {
 	return (
 		<div {...useBlockProps({
-			className: "px-5 lg:px-8",
+			className: "px-5 lg:px-8 alignfull",
 		})}>
 			<InnerBlocks />
 		</div>

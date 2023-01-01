@@ -18,7 +18,7 @@ import { useBlockProps } from '@wordpress/block-editor';
 export default function save({attributes : { height }}) {
 	return (
 		<div {...useBlockProps.save({
-			className: height,
+			className: height
 		})}></div>
 	);
 }
