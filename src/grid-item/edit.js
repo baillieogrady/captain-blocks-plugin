@@ -50,7 +50,7 @@ export default function Edit({ attributes: { columnStart, columnEnd }, setAttrib
 				</PanelBody>
 			</InspectorControls>
 			<div {...useBlockProps({
-				className: `col-start-1 col-end-12 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
+				className: `col-start-1 col-end-13 lg:col-start-${columnStart} lg:col-end-${columnEnd}`
 			})}>
 				<InnerBlocks />
 			</div>

@@ -8,7 +8,7 @@
     }
 
     .wp-block-captain-next-post__link a {
-        cursor: url('./cursor.svg'), auto;
+        cursor: url('./cursor.svg') 56 56, auto;
         position: absolute;
         top: 0;
         left: 0;

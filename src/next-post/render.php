@@ -1,7 +1,7 @@
 <?php
 	$link = get_next_post_link( '%link', '' );
 
-	if($link) {
+	if(strlen($link) > 0) {
 		$heading = get_next_post_link( '%link', '%title' );
 	} else {
 		// if no next post, link to the oldest post
@@ -9,7 +9,7 @@
 			'offset'           => 0,
 			'category'         => '',
 			'category_name'    => '',
-			'orderby'          => 'DESC',
+			'orderby'          => 'ASC',
 			'order'            => 'ASC',
 			'include'          => '',
 			'exclude'          => '',
@@ -25,10 +25,10 @@
 		$latest = get_posts($args);
 
 		$title = get_the_title($latest[0]->ID);
-		$permalink = get_permalink($latest[0]->ID);
+		$permalink = get_the_permalink($latest[0]->ID);
 
 		$heading = '<a href="' . $permalink . '" rel="next">' . $title . '</a>';
-		$link = '<a href="' . $link  . '" rel="next"></a>';
+		$link = '<a href="' . $permalink . '" rel="next"></a>';
 	}
 ?>
 
